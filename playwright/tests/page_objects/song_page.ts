@@ -1,6 +1,8 @@
 import { Page, Locator } from "playwright";
 
-export class AddSong {
+import { SongInfo } from '../songs/song_info';
+
+export class SongPage {
   readonly page: Page;
   readonly title: Locator;
   readonly artist: Locator;
@@ -25,14 +27,14 @@ export class AddSong {
     this.button = this.page.locator('#sngBtn');
   }
 
-  async fillSong(title: string, artist: string, genre: string, album: string, albumImg: string, youtubeUrl: string, tab: string, lyrics: string) {
-    await this.title.fill(title);
-    await this.artist.fill(artist);
-    await this.genre.fill(genre);
-    await this.album.fill(album);
-    await this.albumImgUrl.fill(albumImg);
-    await this.youtubeUrl.fill(youtubeUrl);
-    await this.tab.fill(tab);
-    await this.lyrics.fill(lyrics);
+  async fillSong(data: SongInfo) {
+    await this.title.fill(data.title);
+    await this.artist.fill(data.artist);
+    await this.genre.fill(data.genre);
+    await this.album.fill(data.album);
+    await this.albumImgUrl.fill(data.albumImgUrl);
+    await this.youtubeUrl.fill(data.youtubeUrl);
+    await this.tab.fill(data.tab);
+    await this.lyrics.fill(data.lyrics);
   }
 }

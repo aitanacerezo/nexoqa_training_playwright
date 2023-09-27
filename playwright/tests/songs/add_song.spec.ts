@@ -9,7 +9,7 @@ test("Add new song", async ({ page }) => {
   await homePage.addButton.click();
 
   let addSongPage: AddSong = new AddSong(page);
-  addSongPage.fillSong("Song 1", "Artist 1", "Genre 1", "Album 1", "https://is1-ssl.mzstatic.com/image/thumb/Music123/v4/a2/97/55/a2975589-3fdd-ea7f-afe3-a012cb99961b/197338933862.jpg/1200x1200bf-60.jpg", "https://www.youtube.com/watch?v=k740hisrk_k", "TAB", "Lyrics");
+  await addSongPage.fillSong("Song 1", "Artist 1", "Genre 1", "Album 1", "https://is1-ssl.mzstatic.com/image/thumb/Music123/v4/a2/97/55/a2975589-3fdd-ea7f-afe3-a012cb99961b/197338933862.jpg/1200x1200bf-60.jpg", "https://www.youtube.com/watch?v=k740hisrk_k", "TAB", "Lyrics");
   await addSongPage.button.click();
 
 
